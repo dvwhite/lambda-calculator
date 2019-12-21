@@ -1,15 +1,16 @@
 .container {
     background-color: #c00025;
     width: 100%;
-    max-width: 550px;
+    max-width: 500px;
     border-radius: 15px;
     border: 2px solid grey;
     padding-bottom: 25px;
 }
+
 .display {
-    margin-top: 25px;
+    margin: 25px 25px 25px 5px;
     height: 100px;
-    width: 450px;
+    width: 400px;
     border-radius: 50px;
     color: white;
     background-color: #322c2d;
@@ -18,28 +19,37 @@
     justify-content: flex-end;
     align-items: flex-end;
     padding-right: 8%;
+    padding-left: 8%;
     font-size: 5.0rem;
   }
 
 .numbers {
     display: flex;
     flex-wrap: wrap;
-    max-width: 35%;
+    max-width: 50%;
 }
 
 .numberBtn {
     background-color: mediumblue;
     color: white;
     border-radius: 50%;
-    border-color: mediumblue;
+    border-color: transparent;
+    box-shadow: 1px 3px black;
     width: 60px;
     height: 60px;  
     font-size: 1.25rem;
     font-weight: bold;
     outline: 0;
+    margin: 0.25rem 0.5rem;
 }
+
+.numberBtn:active {
+    box-shadow: 0 2px black;
+    transform: translateY(3px);
+  }
 
 .numberBtn:nth-child(10) {
     width: 120px;
     height: 60px;
+    border-radius: 40%;
 }
