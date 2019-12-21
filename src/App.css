@@ -32,11 +32,16 @@
     color: white;
     background-color: #322c2d;
     box-shadow: 1px 1px #322c2d;
+    box-sizing: border-box;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     font-size: 5.0rem;
     padding-right: 8%;
+    padding-left: 8%;
+    overflow: hidden;
+    word-break: break-all;
+    text-align: right;
   }
 
 .buttons {
