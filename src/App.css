@@ -7,10 +7,14 @@
     padding-bottom: 25px;
 }
 
+.App {
+    padding: 0em 1em;
+}
+
 .display {
-    margin: 25px 25px 25px 5px;
+    margin: 25px 0px;
     height: 100px;
-    width: 400px;
+    width: 425px;
     border-radius: 50px;
     color: white;
     background-color: #322c2d;
@@ -18,29 +22,34 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    padding-right: 8%;
-    padding-left: 8%;
     font-size: 5.0rem;
+    margin-right: auto;
+    padding-right: 8%;
   }
 
 .numbers {
     display: flex;
     flex-wrap: wrap;
-    max-width: 50%;
+    max-width: 75%;
+    padding-bottom: 25px;
 }
 
 .numberBtn {
-    background-color: mediumblue;
+    background-color:  #0202a6;
     color: white;
     border-radius: 50%;
     border-color: transparent;
     box-shadow: 1px 3px black;
-    width: 60px;
-    height: 60px;  
-    font-size: 1.25rem;
+    width: 5rem;
+    height: 5rem;  
+    font-size: 1.75rem;
     font-weight: bold;
     outline: 0;
-    margin: 0.25rem 0.5rem;
+    margin: 0.5rem 0.75rem;
+}
+
+.numberBtn:hover {
+    background-color: #080878;
 }
 
 .numberBtn:active {
@@ -49,7 +58,6 @@
   }
 
 .numberBtn:nth-child(10) {
-    width: 120px;
-    height: 60px;
-    border-radius: 40%;
+    width: 11.5rem;
+    border-radius: 2rem;
 }
