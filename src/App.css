@@ -20,3 +20,26 @@
     padding-right: 8%;
     font-size: 5.0rem;
   }
+
+.numbers {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 35%;
+}
+
+.numberBtn {
+    background-color: mediumblue;
+    color: white;
+    border-radius: 50%;
+    border-color: mediumblue;
+    width: 60px;
+    height: 60px;  
+    font-size: 1.25rem;
+    font-weight: bold;
+    outline: 0;
+}
+
+.numberBtn:nth-child(10) {
+    width: 120px;
+    height: 60px;
+}
