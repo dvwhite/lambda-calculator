@@ -1,5 +1,5 @@
 import React from "react";
-import {numbers, operators, specials} from '../../../data.js';
+import {operators} from '../../../data.js';
 
 //import any components needed
 
