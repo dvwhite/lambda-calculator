@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {numbers} from '../../../data';
 import NumberButton from './NumberButton';
-import calc from '../../../utils';
+import {handleNumbers as calc} from '../../../utils';
 
 //import any components needed
 // example of import from data.js. Note all the ../   This is how we move through folders. 
