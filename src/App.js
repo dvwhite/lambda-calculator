@@ -22,10 +22,18 @@ function App() {
       <Logo />
       <div className="App">
         {/* STEP 4 - Render your components here and be sure to properly import/export all files */}
-        <Display value={0}/>
-        <Numbers className='numbers'/>
-        <Operators className='operators'/>
-        <Specials className='specials' />
+        <div className="display-container">
+          <Display value={0}/>
+        </div>
+        <div className="buttons">
+          <div>
+            <Specials className='specials' />
+            <Numbers className='numbers' />
+          </div>
+          <div>
+            <Operators className='operators'/>
+          </div>
+        </div>
       </div>
     </div>
   );

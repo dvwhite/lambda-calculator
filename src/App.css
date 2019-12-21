@@ -8,17 +8,26 @@
 }
 
 .logo-container {
-    padding: 0em 1em;
+    padding: 1em 0em 0em 2em;
+}
+
+.logo {
+    padding-top: 1em;
 }
 
 .App {
-    padding: 0em 1em;
+    padding: 0em 2em;
+}
+
+.display-container {
+    display: flex;
+    justify-content: center;
 }
 
 .display {
     margin: 25px 0px;
     height: 100px;
-    width: 385px;
+    width: 443px;
     border-radius: 50px;
     color: white;
     background-color: #322c2d;
@@ -27,20 +36,15 @@
     justify-content: flex-end;
     align-items: flex-end;
     font-size: 5.0rem;
-    margin-right: 0.5rem;
-    margin-left: 0.5rem;
     padding-right: 8%;
   }
 
-.numbers {
+.buttons {
     display: flex;
-    flex-wrap: wrap;
-    max-width: 75%;
-    padding-bottom: 25px;
+    justify-content: center;
 }
 
-.numberBtn {
-    background-color:  #0202a6;
+.btn {
     color: white;
     border-radius: 50%;
     border-color: transparent;
@@ -50,46 +54,49 @@
     font-size: 1.75rem;
     font-weight: bold;
     outline: 0;
-    margin: 0.5rem 0.75rem;
+    margin: 0.5rem 1rem 0.5rem 0rem;
 }
 
-.numberBtn:hover {
+.btn:active {
+    box-shadow: 0 2px black;
+    transform: translateY(3px);
+}
+
+.btn:hover {
     background-color: #080878;
 }
 
-.numberBtn:active {
-    box-shadow: 0 2px black;
-    transform: translateY(3px);
-  }
+.numbers {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 25px;
+}
+
+.numberBtn {
+    background-color:  #343382;
+}
 
 .numberBtn:nth-child(10) {
     width: 11.5rem;
     border-radius: 3rem;
 }
 
+.operators-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
 .operators {
     display: flex;
+    justify-content: flex-end;
     flex-wrap: wrap;
-    max-width: 30%;
     padding-bottom: 25px;
 }
 
 .operatorBtn {
-    background-color:  dodgerblue;
-    color: white;
-    border-radius: 50%;
-    border-color: transparent;
-    box-shadow: 1px 3px black;
-    width: 5rem;
-    height: 5rem;  
-    font-size: 1.75rem;
-    font-weight: bold;
-    outline: 0;
-    margin: 0.5rem 0.75rem;
-}
-
-.operatorBtn:hover {
-    background-color: #080878;
+    background-color: #1fd7e0;
+    margin: 0.5rem 0rem;
 }
 
 .operatorBtn:active {
@@ -100,4 +107,8 @@
 .operatorBtn:nth-child(10) {
     width: 11.5rem;
     border-radius: 3rem;
+}
+
+.specialBtn {
+    background-color:  #0257bf;
 }
