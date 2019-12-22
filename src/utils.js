@@ -28,6 +28,8 @@ const handleNumbers = function(value, cb, state) {
             cb(state + value);
         }
         break;
+    default:
+        // Do nothing
     }
 }
 
