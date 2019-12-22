@@ -1,4 +1,5 @@
-import { operators } from "./data";
+import {operators} from "./data";
+import * as math from 'mathjs';
 
 /*
 * Calculate the result of a computation in a calculator
@@ -27,6 +28,10 @@ const handleClick = (event, cb, state) => {
         cb('0');
       } else if (value === '=') {
         // TODO: computation function here
+        if (!isNaN(lastChar)) {
+          const result = math.evaluate(state);
+          cb(result.toString());
+        }
       } else if (value === '.') {
         const decimals = (state.match(/\./g) || []).length;
         if (!isNaN(lastChar) && !decimals) {
