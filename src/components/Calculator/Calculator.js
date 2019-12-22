@@ -6,8 +6,8 @@ import Specials from '../../components/ButtonComponents/SpecialButtons/Specials'
 import handleClick from '../../utils';
 
 const Calculator = (props) => {
-  const [calcState, setCalcState] = useState(0);
-  const [displayState, setDisplayState] = useState(0);
+  const [calcState, setCalcState] = useState('0');
+  const [displayState, setDisplayState] = useState('0');
 
   const onButtonClick = (event) => {
     return handleClick(event, setCalcState, calcState);
