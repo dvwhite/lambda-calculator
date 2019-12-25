@@ -22,18 +22,19 @@
 .display-container {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .display {
     margin: 25px 0px;
-    height: 100px;
+    height: 130px;
     width: 443px;
     border-radius: 50px;
-    color: white;
     background-color: #322c2d;
     box-shadow: 1px 1px #322c2d;
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
     font-size: 5.0rem;
@@ -43,6 +44,21 @@
     word-break: break-all;
     text-align: right;
   }
+
+.display-text {
+  height: 5.5rem;
+  color: white;
+  padding-bottom: 5px;
+  margin: 0;
+  line-height: 1.0em;
+}
+
+.computation {
+  margin-bottom: 0;
+  color: lightgray;
+  font-size: 1.0rem;
+
+}
 
 .buttons {
     display: flex;
