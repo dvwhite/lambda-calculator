@@ -38,7 +38,8 @@ const handleClick = (event, setCalcState, calcState, setDisplayState, displaySta
           const newString = calcState.substring(0, lastNumPos) + negResult;
           setCalcState(newString);
           if (displayState !== '0') {
-            setDisplayState(-displayState.toString());
+            const result = math.evaluate(newString);
+            setDisplayState(result.toString());
           }
         }
         // The equals function
@@ -46,6 +47,7 @@ const handleClick = (event, setCalcState, calcState, setDisplayState, displaySta
         if (!isNaN(lastChar)) {
           const result = math.evaluate(calcState);
           setDisplayState(result.toString());
+          setCalcState(result.toString());
         }
         // Prevent multiple decimal points
       } else if (value === '.') {
@@ -67,8 +69,12 @@ const handleClick = (event, setCalcState, calcState, setDisplayState, displaySta
     // If calcState is 0, return number, else append number
       if (calcState === '0') {
           setCalcState(value);
+          const result = math.evaluate(value);
+          setDisplayState(result.toString());
       } else {
           setCalcState(calcState + value);
+          const result = math.evaluate(calcState + value);
+          setDisplayState(result.toString());
       }
       break;
     default:
