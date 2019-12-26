@@ -1,5 +1,5 @@
 import React from "react";
-import Computation from '../DisplayComponents/Computation'; 
+import Computation from '../DisplayComponents/Computation';
 
 const Display = (props) => {
   const {value, calcState}  = props;
