@@ -17,6 +17,8 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
   const operatorValues = operators.map(operator => operator.value);
   const operatorObj = {};
   const isOperator = operatorChars.includes(value);
+  const lastOpIndex = Math.max(...operatorValues.map(char => calcState.lastIndexOf(char)));
+  const lastNumAdded = (calcState.substring(lastOpIndex + 1, calcState.length))
   operatorChars.forEach((key, i) => operatorObj[key] = operatorValues[i]);
 
   switch (isNaN(value)) {
@@ -32,9 +34,6 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
       // The change sign function
     } else if (value === '+/-') {
         if (displayState !== '0') {
-          // const negValue = (-displayState).toString();
-          const lastOpIndex = Math.max(...operatorValues.map(char => calcState.lastIndexOf(char)));
-          const lastNumAdded = (calcState.substring(lastOpIndex + 1, calcState.length))
           const negValue = (-lastNumAdded).toString();
           setDisplayState(negValue);
           setCalcState(calcState.substring(0, lastOpIndex + 1) + negValue);
@@ -56,8 +55,9 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
       // The percentage function
     } else if (value === '%') {
       if (displayState !== '0') {
-        setCalcState(calcState + value);
-        setDisplayState(displayState + value);
+        const percentValue = (lastNumAdded * 0.01).toString();
+        setDisplayState(percentValue);
+        setCalcState(calcState.substring(0, lastOpIndex + 1) + percentValue);
       }
     // Prevent consecutive operators
     } else if (isOperator) {
