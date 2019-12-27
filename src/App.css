@@ -57,6 +57,9 @@
   margin-bottom: 0;
   color: lightgray;
   font-size: 1.0rem;
+  overflow: hidden;
+  word-break: break-all;
+  text-align: right;
 
 }
 
