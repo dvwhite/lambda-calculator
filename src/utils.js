@@ -18,7 +18,6 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
   const operatorObj = {};
   const isOperator = operatorChars.includes(value);
   operatorChars.forEach((key, i) => operatorObj[key] = operatorValues[i]);
-  console.log(isOperator);
 
   switch (isNaN(value)) {
   // If number is a period, a special character, or an operator, it is NaN
@@ -33,8 +32,12 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
       // The change sign function
     } else if (value === '+/-') {
         if (displayState !== '0') {
-          const negValue = (-displayState).toString();
+          // const negValue = (-displayState).toString();
+          const lastOpIndex = Math.max(...operatorValues.map(char => calcState.lastIndexOf(char)));
+          const lastNumAdded = (calcState.substring(lastOpIndex + 1, calcState.length))
+          const negValue = (-lastNumAdded).toString();
           setDisplayState(negValue);
+          setCalcState(calcState.substring(0, lastOpIndex + 1) + negValue);
         }
       // The equals function
     } else if (value === '=') {
@@ -65,9 +68,7 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
     if (calcState === '0' || calcState === '') {
         setCalcState(value);
     } else {
-      if (operatorClicked) {
-        setCalcState(calcState + value);
-      }
+      setCalcState(calcState + value);
     }
     // If displayState is 0, return number, else append number
     if (displayState === '0') {
