@@ -53,6 +53,12 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
           setCalcState(calcState + value);
           setDisplayState(displayState + value);
       }
+      // The percentage function
+    } else if (value === '%') {
+      if (displayState !== '0') {
+        setCalcState(calcState + value);
+        setDisplayState(displayState + value);
+      }
     // Prevent consecutive operators
     } else if (isOperator) {
       if (!operatorValues.includes(lastCalcChar)) {
