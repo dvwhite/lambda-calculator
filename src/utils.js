@@ -61,10 +61,12 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
       }
     // Prevent consecutive operators
     } else if (isOperator) {
-      if (!operatorValues.includes(lastCalcChar)) {
-        setCalcState(calcState + operatorObj[value]);
-      } else {
-        setCalcState(calcState.substring(0, calcState.length - 1) + operatorObj[value]);
+      if (calcState !== '') {
+        if (!operatorValues.includes(lastCalcChar)) {
+          setCalcState(calcState + operatorObj[value]);
+        } else {
+          setCalcState(calcState.substring(0, calcState.length - 1) + operatorObj[value]);
+        }
       }
     }
     break;
