@@ -8,7 +8,7 @@ import handleClick from '../../utils';
 const Calculator = (props) => {
   const [calcState, setCalcState] = useState('');
   const [displayState, setDisplayState] = useState('0');
-  const [operatorClicked, setOperatorClicked] = useState(false);
+  const [newNumberInputReady, setNewNumberInputReady] = useState(false);
 
   const onButtonClick = (event) => {
     handleClick(
@@ -17,8 +17,8 @@ const Calculator = (props) => {
       calcState, 
       setDisplayState, 
       displayState, 
-      operatorClicked, 
-      setOperatorClicked
+      newNumberInputReady, 
+      setNewNumberInputReady
       );
   }
 

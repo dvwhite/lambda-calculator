@@ -7,7 +7,7 @@ import * as math from 'mathjs';
 * returns: none
 */
 const handleClick = (event, setCalcState, calcState, setDisplayState, 
-                     displayState, operatorClicked, setOperatorClicked) => {
+                     displayState, newNumberInputReady, setNewNumberInputReady) => {
    /* We need to validate number before updating calcState
       in order to prevent append or eval issues */
   const value = event.target.textContent;
@@ -38,6 +38,8 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
             const negValue = (-lastNumAdded).toString();
             setDisplayState(negValue);
             setCalcState(calcState.substring(0, lastOpIndex + 1) + negValue);
+          } else {
+            setNewNumberInputReady(true)
           }
         }
       // The percentage function
@@ -47,6 +49,8 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
           const percentValue = (lastNumAdded * 0.01).toString();
           setDisplayState(percentValue);
           setCalcState(calcState.substring(0, lastOpIndex + 1) + percentValue);
+        } else {
+          setNewNumberInputReady(true)
         }
       }
       // The equals function
@@ -91,7 +95,7 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
     if (displayState === '0') {
       setDisplayState(value);
     } else {
-      if (operatorClicked) {
+      if (newNumberInputReady) {
         setDisplayState(value);
       } else {
         setDisplayState(displayState + value)
@@ -103,9 +107,9 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
   }
 
   if (isOperator) {
-    setOperatorClicked(true); // set this to true every time an operator is clicked
+    setNewNumberInputReady(true); // set this to true every time an operator is clicked
   } else {
-    setOperatorClicked(false); // otherwise resets to false
+    setNewNumberInputReady(false); // otherwise resets to false
   }
 }
 
