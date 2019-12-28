@@ -101,6 +101,7 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
         setDisplayState(displayState + value)
       }
     }
+    setNewNumberInputReady(false); // otherwise resets to false
     break;
   default:
       // Do nothing
@@ -108,8 +109,6 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
 
   if (isOperator) {
     setNewNumberInputReady(true); // set this to true every time an operator is clicked
-  } else {
-    setNewNumberInputReady(false); // otherwise resets to false
   }
 }
 
