@@ -43,9 +43,11 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
       // The percentage function
     } else if (value === '%') {
       if (displayState !== '0') {
-        const percentValue = (lastNumAdded * 0.01).toString();
-        setDisplayState(percentValue);
-        setCalcState(calcState.substring(0, lastOpIndex + 1) + percentValue);
+        if (!isNaN(lastCalcChar)) {
+          const percentValue = (lastNumAdded * 0.01).toString();
+          setDisplayState(percentValue);
+          setCalcState(calcState.substring(0, lastOpIndex + 1) + percentValue);
+        }
       }
       // The equals function
     } else if (value === '=') {
