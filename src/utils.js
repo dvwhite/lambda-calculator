@@ -58,8 +58,13 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
     } else if (value === '.') {
       const decimals = (displayState.match(/\./g) || []).length;
       if (!isNaN(lastDisplayChar) && !decimals) {
+        if (calcState !== '') {
           setCalcState(calcState + value);
           setDisplayState(displayState + value);
+        } else {
+          setCalcState(displayState + value);
+          setDisplayState(displayState + value);
+        }
       }
     // Prevent consecutive operators
     } else if (isOperator) {
