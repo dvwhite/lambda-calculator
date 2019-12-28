@@ -63,7 +63,7 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
       // Prevent multiple decimal points
     } else if (value === '.') {
       const decimals = (displayState.match(/\./g) || []).length;
-      if (!isNaN(lastDisplayChar) && !decimals) {
+      if (!isNaN(lastDisplayChar) && !(operatorValues.includes(lastCalcChar)) && !decimals) {
         if (calcState !== '') {
           setCalcState(calcState + value);
           setDisplayState(displayState + value);
@@ -74,7 +74,7 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
       }
     // Prevent consecutive operators
     } else if (isOperator) {
-      if (calcState !== '') {
+      if (calcState !== '' && lastCalcChar !== '.') {
         if (!operatorValues.includes(lastCalcChar)) {
           setCalcState(calcState + operatorObj[value]);
         } else {
@@ -101,7 +101,7 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
         setDisplayState(displayState + value)
       }
     }
-    setNewNumberInputReady(false); // otherwise resets to false
+    if (value !== '.') setNewNumberInputReady(false); // otherwise resets to false
     break;
   default:
       // Do nothing
