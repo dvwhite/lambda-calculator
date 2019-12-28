@@ -34,9 +34,11 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
       // The change sign function
     } else if (value === '+/-') {
         if (displayState !== '0') {
-          const negValue = (-lastNumAdded).toString();
-          setDisplayState(negValue);
-          setCalcState(calcState.substring(0, lastOpIndex + 1) + negValue);
+          if (!isNaN(lastCalcChar)) {
+            const negValue = (-lastNumAdded).toString();
+            setDisplayState(negValue);
+            setCalcState(calcState.substring(0, lastOpIndex + 1) + negValue);
+          }
         }
       // The percentage function
     } else if (value === '%') {
