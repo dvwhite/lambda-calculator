@@ -31,6 +31,7 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
     if (value.toUpperCase() === 'C') {
       setCalcState('');
       setDisplayState('0');
+      setNewNumberInputReady(false)
       // The change sign function
     } else if (value === '+/-') {
         if (displayState !== '0') {
