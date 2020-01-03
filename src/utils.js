@@ -18,7 +18,7 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
   const operatorObj = {};
   const isOperator = operatorChars.includes(value);
   const lastOpIndex = Math.max(...operatorValues.map(char => calcState.lastIndexOf(char)));
-  const lastNumAdded = (calcState.substring(lastOpIndex + 1, calcState.length))
+  const lastNumAdded = (calcState.substring(lastOpIndex + 1, calcState.length));
   operatorChars.forEach((key, i) => operatorObj[key] = operatorValues[i]);
 
   switch (isNaN(value)) {
@@ -92,13 +92,27 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
             }
           }
           break;
-        // Prevent consecutive operators
+        // Else it's an operator
+        // We are actively preventing consecutive operators
         default:
           if (calcState !== '' && lastCalcChar !== '.') {
+            // Put current expression in parenthesis if current operator is * or /
+            // We DON'T want to follow order of operations
+            const calcStateBeforeLastOp = calcState.substring(0, calcState.length);
+            let newCalcState;
+            switch (operatorObj[value]) {
+              case '*': case '/':
+                newCalcState = `(${calcStateBeforeLastOp})`;
+                break
+              default:
+                newCalcState = calcState;
+            }
+
+            // If the last char is already an operator, replace it with current clicked button's value
             if (!operatorValues.includes(lastCalcChar)) {
-              setCalcState(calcState + operatorObj[value]);
+              setCalcState(newCalcState + operatorObj[value]);
             } else {
-              setCalcState(calcState.substring(0, calcState.length - 1) + operatorObj[value]);
+              setCalcState(newCalcState.substring(0, newCalcState.length - 1) + operatorObj[value]);
             }
           }
         }
