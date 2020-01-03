@@ -58,8 +58,14 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
           if (displayState !== '0') {
             if (!isNaN(lastCalcChar)) {
               const percentValue = (lastNumAdded * 0.01).toString();
+              let percentPos;
+              if (displayState < 0) {
+                percentPos = lastOpIndex;
+              } else {
+                percentPos = lastOpIndex + 1;
+              }
               setDisplayState(percentValue);
-              setCalcState(calcState.substring(0, lastOpIndex + 1) + percentValue);
+              setCalcState(calcState.substring(0, percentPos) + percentValue);
             } else {
               setNewNumberInputReady(true)
             }
