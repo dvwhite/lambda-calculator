@@ -37,9 +37,17 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
         case '+/-':
           if (displayState !== '0') {
             if (!isNaN(lastCalcChar)) {
-              const negValue = (-lastNumAdded).toString();
+              let negValue;
+              let pos;
+              if (displayState < 0) {
+                negValue = lastNumAdded.toString();
+                pos = lastOpIndex;
+              } else {
+                negValue = (-lastNumAdded).toString();
+                pos = lastOpIndex + 1;
+              }
+              setCalcState(calcState.substring(0, pos) + negValue);
               setDisplayState(negValue);
-              setCalcState(calcState.substring(0, lastOpIndex + 1) + negValue);
             } else {
               setNewNumberInputReady(true)
             }
