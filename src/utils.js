@@ -98,14 +98,18 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
           if (calcState !== '' && lastCalcChar !== '.') {
             // Put current expression in parenthesis if current operator is * or /
             // We DON'T want to follow order of operations
-            const calcStateBeforeLastOp = calcState.substring(0, calcState.length);
             let newCalcState;
-            switch (operatorObj[value]) {
-              case '*': case '/':
-                newCalcState = `(${calcStateBeforeLastOp})`;
-                break
-              default:
-                newCalcState = calcState;
+            if (!operatorValues.includes(lastCalcChar)) {
+              const calcStateBeforeLastOp = calcState.substring(0, calcState.length);
+              switch (operatorObj[value]) {
+                case '*': case '/':
+                  newCalcState = `(${calcStateBeforeLastOp})`;
+                  break
+                default:
+                  newCalcState = calcState;
+              }
+            } else {
+              newCalcState = calcState;
             }
 
             // If the last char is already an operator, replace it with current clicked button's value
