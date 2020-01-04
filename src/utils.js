@@ -15,6 +15,7 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
   const lastDisplayChar = displayState.split('')[displayState.length - 1];
   const operatorChars = operators.map(operator => operator.char);
   const operatorValues = operators.map(operator => operator.value);
+  const calcIncludesAddOrSubtract = calcState.includes("-") || calcState.includes("+");
   const operatorObj = {};
   const isOperator = operatorChars.includes(value);
   const lastOpIndex = Math.max(...operatorValues.map(char => calcState.lastIndexOf(char)));
@@ -105,7 +106,7 @@ const handleClick = (event, setCalcState, calcState, setDisplayState,
               const calcStateBeforeLastOp = calcState.substring(0, calcState.length);
               switch (operatorObj[value]) {
                 case '*': case '/':
-                  newCalcState = `(${calcStateBeforeLastOp})`;
+                  newCalcState = calcIncludesAddOrSubtract ? `(${calcStateBeforeLastOp})` : calcState;
                   break
                 default:
                   newCalcState = calcState;
