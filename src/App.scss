@@ -125,17 +125,6 @@
 .operatorBtn {
     background-color: #1fd7e0;
     margin: 0.5rem 0rem;
-
-    &:active {
-        box-shadow: 0 2px black;
-        transform: translateY(3px);
-      }
-
-    &:nth-child(10) {
-        width: 11.5rem;
-        border-radius: 3rem;
-    }
-
 }
 
 .specialBtn {
