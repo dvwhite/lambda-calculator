@@ -23,126 +23,121 @@ $mobile-screen: "only screen and (max-width: 500px)";
     border-radius: 15px;
     border: 2px solid grey;
     margin: auto;
-}
 
-.logo-container {
-    padding: 1em 0em 0em 2em;
-}
+  .logo-container {
+      padding: 1em 0em 0em 2em;
 
-.logo {
-    padding-top: 1em;
-}
-
-.App {
-    padding: 0em 2em;
-}
-
-.display-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.display {
-    margin: 25px 0px;
-    height: 130px;
-    width: 443px;
-    border-radius: 50px;
-    background-color: #322c2d;
-    box-shadow: 1px 1px #322c2d;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-    font-size: 5.0rem;
-    padding-right: 8%;
-    padding-left: 8%;
-    overflow: hidden;
-    word-break: break-all;
-    text-align: right;
+    .logo {
+        padding-top: 1em;
+    }
   }
 
-.display-text {
-  height: 5.5rem;
-  color: white;
-  padding-bottom: 5px;
-  margin: 0;
-  line-height: 1.0em;
-}
+  .App {
+    padding: 0em 2em;
 
-.computation {
-  margin-bottom: 0;
-  color: lightgray;
-  font-size: 1.0rem;
-  overflow: hidden;
-  word-break: break-all;
-  text-align: right;
-}
+    .display-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-.buttons {
-    display: flex;
-}
+      .display {
+        margin: 25px 0px;
+        height: 130px;
+        width: 443px;
+        border-radius: 50px;
+        background-color: #322c2d;
+        box-shadow: 1px 1px #322c2d;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        font-size: 5.0rem;
+        padding-right: 8%;
+        padding-left: 8%;
+        overflow: hidden;
+        word-break: break-all;
+        text-align: right;
 
-.btn {
-    color: white;
-    border-radius: 50%;
-    border-color: transparent;
-    box-shadow: 1px 3px black;
-    width: 5rem;
-    height: 5rem;  
-    font-size: 1.75rem;
-    font-weight: bold;
-    outline: 0;
-    margin: 0.5rem 1.7rem 0.5rem 0rem;
+        .display-text {
+          height: 5.5rem;
+          color: white;
+          padding-bottom: 5px;
+          margin: 0;
+          line-height: 1.0em;
+        }
+      }
 
-    &:active {
-        box-shadow: 0 2px black;
-        transform: translateY(3px);
+      .computation {
+        margin-bottom: 0;
+        color: lightgray;
+        font-size: 1.0rem;
+        overflow: hidden;
+        word-break: break-all;
+        text-align: right;
+        height: 1.2rem;
+      }
+
+    } 
+
+    .buttons {
+        display: flex;
+
+      .btn {
+          color: white;
+          border-radius: 50%;
+          border-color: transparent;
+          box-shadow: 1px 3px black;
+          width: 5rem;
+          height: 5rem;  
+          font-size: 1.75rem;
+          font-weight: bold;
+          outline: 0;
+          margin: 0.5rem 1.7rem 0.5rem 0rem;
+
+          &:active {
+              box-shadow: 0 2px black;
+              transform: translateY(3px);
+          }
+
+          &:hover {
+              background-color: #080878;
+          }
+
+          // @media (max-width: 500px) {}
+      }
+
+      .numbers, .specials {
+          display: flex;
+          flex-wrap: wrap;
+          width: 20.5rem;
+          justify-content: space-between;
+      }
+
+      .operators {
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        padding-bottom: 25px;
+      }
+
+      .numberBtn {
+          background-color:  #343382;
+
+          &:nth-child(10) {
+              width: 11.7rem;
+              border-radius: 3rem;
+          }
+      }
+
+      .operatorBtn {
+        background-color: #1fd7e0;
+        margin: 0.5rem 0rem;
+      }
+
+      .specialBtn {
+          background-color:  #0257bf;
+      }
     }
-
-    &:hover {
-        background-color: #080878;
-    }
-
-    // @media (max-width: 500px) {}
-}
-
-.numbers, .specials {
-    display: flex;
-    flex-wrap: wrap;
-    width: 20.5rem;
-    justify-content: space-between;
-}
-
-.numberBtn {
-    background-color:  #343382;
-
-    &:nth-child(10) {
-        width: 11.7rem;
-        border-radius: 3rem;
-    }
-
-}
-
-.operators-container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
-.operators {
-    display: flex;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    padding-bottom: 25px;
-}
-
-.operatorBtn {
-    background-color: #1fd7e0;
-    margin: 0.5rem 0rem;
-}
-
-.specialBtn {
-    background-color:  #0257bf;
+  }
 }
