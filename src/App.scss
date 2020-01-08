@@ -1,0 +1,143 @@
+// Variables
+$mobile-screen: "only screen and (max-width: 500px)"; 
+
+// Mixins
+@mixin flex-centered-hv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin txt-breakall-right {
+  word-break: break-all;
+  text-align: right;
+}
+
+// App styles
+.container {
+    /* alternate bg gradient:  
+    background-image: linear-gradient(#3494E6, #EC6EAD); */
+    background-image: linear-gradient(#c00025, #e74c3c);
+    width: 100%;
+    max-width: 475px;
+    border-radius: 15px;
+    border: 2px solid grey;
+    margin: auto;
+
+  .logo-container {
+      padding: 1em 0em 0em 2em;
+
+    .logo {
+        padding-top: 1em;
+    }
+  }
+
+  .App {
+    padding: 0em 2em;
+
+    .display-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .display {
+        margin: 25px 0px;
+        height: 130px;
+        width: 443px;
+        border-radius: 50px;
+        background-color: #322c2d;
+        box-shadow: 1px 1px #322c2d;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        font-size: 5.0rem;
+        padding-right: 8%;
+        padding-left: 8%;
+        overflow: hidden;
+        word-break: break-all;
+        text-align: right;
+
+        .display-text {
+          height: 5.5rem;
+          color: white;
+          padding-bottom: 5px;
+          margin: 0;
+          line-height: 1.0em;
+        }
+      }
+
+      .computation {
+        margin-bottom: 0;
+        color: lightgray;
+        font-size: 1.0rem;
+        overflow: hidden;
+        word-break: break-all;
+        text-align: right;
+        height: 1.2rem;
+      }
+
+    } 
+
+    .buttons {
+        display: flex;
+
+      .btn {
+          color: white;
+          border-radius: 50%;
+          border-color: transparent;
+          box-shadow: 1px 3px black;
+          width: 5rem;
+          height: 5rem;  
+          font-size: 1.75rem;
+          font-weight: bold;
+          outline: 0;
+          margin: 0.5rem 1.7rem 0.5rem 0rem;
+
+          &:active {
+              box-shadow: 0 2px black;
+              transform: translateY(3px);
+          }
+
+          &:hover {
+              background-color: #080878;
+          }
+
+          // @media (max-width: 500px) {}
+      }
+
+      .numbers, .specials {
+          display: flex;
+          flex-wrap: wrap;
+          width: 20.5rem;
+          justify-content: space-between;
+      }
+
+      .operators {
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        padding-bottom: 25px;
+      }
+
+      .numberBtn {
+          background-color:  #343382;
+
+          &:nth-child(10) {
+              width: 11.7rem;
+              border-radius: 3rem;
+          }
+      }
+
+      .operatorBtn {
+        background-color: #1fd7e0;
+        margin: 0.5rem 0rem;
+      }
+
+      .specialBtn {
+          background-color:  #0257bf;
+      }
+    }
+  }
+}
